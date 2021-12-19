@@ -1,5 +1,5 @@
 from abc import ABC,abstractclassmethod
-from math import radians, tan, pi
+from math import radians, sqrt, tan, pi, sqrt
 
 class Shape(ABC):
     "Super Class"
@@ -27,7 +27,7 @@ class Regular(Shape):
         return (self.x * self.n)
 
     def config(self):
-        return [int(self.perimeter()), int(self.area())]
+        return [(self.perimeter()), (self.area())]
 
 class Circle(Shape):
     def __init__(self, r) -> None:
@@ -40,4 +40,20 @@ class Circle(Shape):
         return 2*pi*self.r
 
     def config(self):
-        return [int(self.perimeter()), int(self.area())]
+        return [(self.perimeter()), (self.area())]
+
+# class Diagonal(Shape):
+#     def __init__(self, diag, n) -> None:
+#         self.diag = diag
+#         self.n = n
+    
+#     def area(self):
+#         x = sqrt(((self.diag/2)**2)-((self.n/2)**2))
+#         return (x*self.n**2)/2
+    
+#     def perimeter(self):
+#         return 2*pi*self.r
+
+#     def config(self):
+#         return [(self.perimeter()), (self.area())]
+
